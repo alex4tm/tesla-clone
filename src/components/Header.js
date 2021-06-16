@@ -36,16 +36,12 @@ const Header = (props) => {
         ))}
         <li><a href="#">Existing Inventory</a></li>
         <li><a href="#">Used Inventory</a></li>
-        <li><a href="#">Trade-in</a></li>
+        <li><a href="#">Trade-In</a></li>
         <li><a href="#">Test Drive</a></li>
         <li><a href="#">Cybertruck</a></li>
         <li><a href="#">Roadster</a></li>
         <li><a href="#">Semi</a></li>
         <li><a href="#">Charging</a></li>
-        <li><a href="#">Powerwall</a></li>
-        <li><a href="#">Commercial Energy</a></li>
-        <li><a href="#">Utilities</a></li>
-        <li><a href="#">Find Us</a></li>
         <li><a href="#">Support</a></li>
       </BurgerNav>
     </Container>
@@ -103,17 +99,18 @@ const BurgerNav = styled.div`
   background-color: white;
   width: 300px;
   z-index: 10;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   text-align: start;
   transition: all 0.3s ease-in-out;
   transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
   li {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0, 0 , 0, 0.2);
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0 , 0, 0.05);
     a {
       font-weight: 600;
+      color: #393c41;
     }
   }
 `
