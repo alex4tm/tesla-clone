@@ -18,15 +18,17 @@ const Header = (props) => {
          <a href="#">Model 3</a>
          <a href="#">Model X</a>
          <a href="#">Model Y</a>
+         <a href="#">Solar Roof</a>
+         <a href="#">Solar Panels</a>
       </Menu>
       <RightMenu>
         <a href="#">Shop</a>
-        <a href="#">Tesla Account</a>
-        <CustomMenu />
+        <a href="#">Account</a>
+        <CustomMenu onClick={() => setBurgerNavStatus(true)}/>
       </RightMenu>
-      <BurgerNav>
+      <BurgerNav show={burgerNavStatus}>
         <CloseWrapper>
-          <CustomClose />
+          <CustomClose onClick={() => setBurgerNavStatus(false)}/>
         </CloseWrapper>
         <li><a href="#">Existing Inventory</a></li>
         <li><a href="#">Used Inventory</a></li>
@@ -70,7 +72,6 @@ const Menu = styled.div`
 
   a {
     font-weight: 600;
-    text-transform: uppercase;
     padding: 0 10px;
   }
 
@@ -84,7 +85,6 @@ const RightMenu = styled.div`
   align-items: center;
   a {
     font-weight: 600;
-    text-transform: uppercase;
     margin-right: 10px;
   }
 `
@@ -103,6 +103,8 @@ const BurgerNav = styled.div`
   display: flex;
   flex-direction: column;
   text-align: start;
+  transition: all 0.3s ease-in-out;
+  transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
   li {
     padding: 15px 0;
     border-bottom: 1px solid rgba(0, 0 , 0, 0.2);
@@ -113,7 +115,17 @@ const BurgerNav = styled.div`
 `
 
 const CustomClose = styled(CloseIcon)`
-
+  cursor: pointer;
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px;
+  path {
+    fill: black;
+  }
+  :hover {
+    background: rgba(222,222,222,0.7);
+    border-radius: 50%;
+  }
 `
 const CloseWrapper = styled.div`
   display: flex;
