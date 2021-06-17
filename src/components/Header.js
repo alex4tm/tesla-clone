@@ -9,22 +9,21 @@ import { useSelector } from 'react-redux';
 const Header = (props) => {
   const [burgerNavStatus, setBurgerNavStatus] = useState(false);
   const cars = useSelector(selectCars);
-
   return (
     <Container>
-      <a>
+      <a href="#">
         <img src="/images/logo.svg"  alt="logo" />
       </a>
       <Menu>
         { cars && cars.map((car, index) =>(
-          <a key={index} href="#">{car}</a>
+          <a key={index} href="#" className="link">{car}</a>
           ))}
-        <a href="#">Solar Roof</a>
-        <a href="#">Solar Panels</a>
+        <a href="#" className="link">Solar Roof</a>
+        <a href="#" className="link">Solar Panels</a>
       </Menu>
       <RightMenu>
-        <a href="#">Shop</a>
-        <a href="#">Account</a>
+        <a href="#"  className="link">Shop</a>
+        <a href="#" className="link">Account</a>
         <CustomMenu onClick={() => setBurgerNavStatus(true)}/>
       </RightMenu>
       <BurgerNav show={burgerNavStatus}>
@@ -32,7 +31,7 @@ const Header = (props) => {
           <CustomClose onClick={() => setBurgerNavStatus(false)}/>
         </CloseWrapper>
         { cars && cars.map((car, index) =>(
-          <li key={index}><a href="#">{car}</a></li>
+          <li key={index}><a href="#" >{car}</a></li>
         ))}
         <li><a href="#">Existing Inventory</a></li>
         <li><a href="#">Used Inventory</a></li>
@@ -62,6 +61,9 @@ const Container = styled.div`
   left: 0;
   right: 0;
   z-index: 1;
+  img {
+    cursor: pointer;
+  }
 `
 
 const Menu = styled.div`
@@ -69,7 +71,7 @@ const Menu = styled.div`
   align-items: center;
   flex: 1;
   justify-content: center;
-
+  position: relative;
   a {
     font-weight: 600;
     padding: 0 10px;
@@ -107,12 +109,19 @@ const BurgerNav = styled.div`
   transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
   li {
     padding: 10px 0;
-    border-bottom: 1px solid rgba(0, 0 , 0, 0.05);
     a {
       font-weight: 600;
       color: #393c41;
+      line-height: 1rem;
+      transition: all 0.3 ease-in-out;
+      margin-left: 10px;
     }
+  :hover {
+      background: rgba(222,222,222, 0.5);
+      border-radius: 15px;
+
   }
+}
 `
 
 const CustomClose = styled(CloseIcon)`

@@ -1,20 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import Section from './Section'
+import Section from './Section';
+import Footer from './Footer';
 
 const Home = (props) => {
   return (
     <Container>
       <Section
         title="Model S"
-        description="Order online for touchless delivery"
+        description="Order online for Touchless Delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"
         backgroundImg="model-s.jpg"
+        id="toucheless"
       />
       <Section
         title="Model Y"
-        description="Order online for touchless delivery"
+        description="Order online for Touchless Delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"
         backgroundImg="model-y.jpg"
@@ -22,7 +24,7 @@ const Home = (props) => {
 
       <Section
         title="Model 3"
-        description="Order online for touchless delivery"
+        description="Order online for Touchless Delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"
         backgroundImg="model-3.jpg"
@@ -30,7 +32,7 @@ const Home = (props) => {
 
       <Section
         title="Model X"
-        description="Order online for touchless delivery"
+        description="Order online for Touchless Delivery"
         leftBtnText="Custom Order"
         rightBtnText="Existing inventory"
         backgroundImg="model-x.jpg"
@@ -55,7 +57,7 @@ const Home = (props) => {
         leftBtnText="Order now"
         backgroundImg="accessories.jpg"
       />
-
+      <Footer />
     </Container>
   )
 }
